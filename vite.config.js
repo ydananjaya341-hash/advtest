@@ -2,6 +2,10 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
+  // CRITICAL FIX: Ensures all links and assets use relative paths.
+  // This prevents 404 errors when deployed to GitHub Pages or sub-folders.
+  base: './', 
+  
   build: {
     rollupOptions: {
       input: {
